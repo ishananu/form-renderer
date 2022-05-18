@@ -77,7 +77,7 @@ const App = () => {
       <Fragment>
         {inputFieldData.map((values, i) => {
           return (
-            <>
+            <Fragment key={`{frag-${i}}`}>
               {values &&
                 (values.type === 'email' ||
                   values.type === 'telephone' ||
@@ -109,7 +109,7 @@ const App = () => {
                   onChange={handleInputChange}
                 />
               )}
-            </>
+            </Fragment>
           );
         })}
       </Fragment>
