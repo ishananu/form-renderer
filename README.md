@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Frontend Assessment: Form Renderer
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Right after success response received from API, form will automatically generate this.
+
+![image](https://user-images.githubusercontent.com/17267615/169065750-f94baf69-534c-4e58-acc5-71d611b5ad34.png)
+
+`Form values` section shows the current state details of the form. By clicking the submit button, user can see the generated JSON with requested details in the task like this in `Submitted values` section.
+
+![image](https://user-images.githubusercontent.com/17267615/169066385-32698b11-1f6f-4d43-a588-a5690934cb3e.png)
+
+If user add invalid details to relavant fields, out JSON will be like this. 
+
+![image](https://user-images.githubusercontent.com/17267615/169067609-56473e4a-0327-45bc-8eec-f4127d5c8860.png)
+
+The API is intentionally throttled to return a valid collection or an error,to handle that alert will be showing to the user and by clicking the button below user can request the data again.
+
+![image](https://user-images.githubusercontent.com/17267615/169065100-e72f5a07-f4b1-4b80-b258-41be8234d0f0.png)
+
 
 ## Available Scripts
 
@@ -28,19 +45,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
