@@ -8,7 +8,7 @@ Right after success response received from API, form will automatically generate
 
 `Form values` section shows the current state details of the form. By clicking the submit button, user can see the generated JSON with requested details in the task like this in `Submitted values` section.
 
-![image](https://user-images.githubusercontent.com/17267615/169066385-32698b11-1f6f-4d43-a588-a5690934cb3e.png)
+![image](https://user-images.githubusercontent.com/17267615/169068099-fc473563-b4ef-48a3-8b73-f3c4d548bf52.png)
 
 If user add invalid details to relavant fields, out JSON will be like this. 
 
