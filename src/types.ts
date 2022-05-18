@@ -6,24 +6,30 @@ interface IFormResponse {
   value: string[] | string;
   isHidden?: boolean;
   isOptional?: boolean;
-  default?: string
+  default?: string;
 }
 
-
 interface IInputField {
-    data: IFormResponse;
-    onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-    value: string
-  }
+  data: IFormResponse;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+}
 
-  interface IRadioField {
-    data: IFormResponse
-    onChange: (e: any) => void;
-  }
+interface IRadioField {
+  data: IFormResponse;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+}
 
-  interface IOptionField {
-    data: IFormResponse
-    onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
-  }
+interface IOptionField {
+  data: IFormResponse;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+}
 
-  export type {IInputField, IRadioField, IOptionField, IFormResponse}
+interface IJson {
+  isValid: boolean;
+  label?: string;
+  value: string;
+}
+
+export type { IInputField, IRadioField, IOptionField, IFormResponse, IJson };

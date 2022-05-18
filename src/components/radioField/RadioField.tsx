@@ -4,10 +4,10 @@ import { camelCase } from '../../common/helpers';
 import { IRadioField } from '../../types';
 
 const RadioField: FC<IRadioField> = ({ data, onChange }) => {
-  const formName = data?.label &&  camelCase(data?.label);
+  const formName = data?.label && camelCase(data?.label);
   return (
     <Fragment>
-      <Form.Group className='mb-3' controlId={formName}>
+      <Form.Group className='mb-3'>
         <Form.Label>{data.label} :</Form.Label>
         {Array.isArray(data.value) &&
           data.value.map((val, i) => {
@@ -17,8 +17,9 @@ const RadioField: FC<IRadioField> = ({ data, onChange }) => {
                 type='radio'
                 value={val}
                 name={formName}
-                key={`inline-${data.type}-${i}`}
-                onChange={onChange} className='text-muted'
+                key={`${formName}-${i}`}
+                onChange={onChange}
+                className='text-muted'
               />
             );
           })}
