@@ -9,7 +9,7 @@ import {
   Spinner,
 } from 'react-bootstrap';
 import './App.css';
-import { camelCase, generateFormJson, validateEmail } from './common/helpers';
+import { camelCase, generateFormJson } from './common/helpers';
 import InputField from './components/inputField/InputField';
 import OptionField from './components/optionField/OptionField';
 import RadioField from './components/radioField/RadioField';
@@ -29,7 +29,7 @@ const App = () => {
       setLoading(false);
       setInputFieldsData(values);
       const obj: any = {};
-      values.map((val) => {
+      values.forEach((val) => {
         if (val.label) {
           obj[camelCase(val.label)] = val.default || '';
         }
@@ -75,48 +75,43 @@ const App = () => {
   const generateFormInputs = () => {
     return (
       <Fragment>
-        {inputFieldData &&
-          inputFieldData.map((values, i) => {
-            if (
-              values &&
-              (values.type === 'email' ||
-                values.type === 'telephone' ||
-                values.type === 'hidden')
-            ) {
-              return (
-                <InputField
-                  data={values}
-                  key={`${values.type}-${i}`}
-                  onChange={handleInputChange}
-                  value={
-                    values?.label &&
-                    formData &&
-                    (formData as any)[camelCase(values?.label)]
-                  }
-                />
-              );
-            }
+        {inputFieldData.map((values, i) => {
+          return (
+            <>
+              {values &&
+                (values.type === 'email' ||
+                  values.type === 'telephone' ||
+                  values.type === 'hidden') && (
+                  <InputField
+                    data={values}
+                    key={`${values.type}-${i}`}
+                    onChange={handleInputChange}
+                    value={
+                      values?.label &&
+                      formData &&
+                      (formData as any)[camelCase(values?.label)]
+                    }
+                  />
+                )}
 
-            if (values && values.type === 'radio') {
-              return (
+              {values && values.type === 'radio' && (
                 <RadioField
                   data={values}
                   key={`${values.type}-${i}`}
                   onChange={handleInputChange}
                 />
-              );
-            }
+              )}
 
-            if (values && values.type === 'select') {
-              return (
+              {values && values.type === 'select' && (
                 <OptionField
                   data={values}
                   key={`${values.type}-${i}`}
                   onChange={handleInputChange}
                 />
-              );
-            }
-          })}
+              )}
+            </>
+          );
+        })}
       </Fragment>
     );
   };

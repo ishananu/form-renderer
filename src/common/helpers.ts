@@ -23,7 +23,7 @@ const validatePhoneNumber = (phoneNo: string) => {
 
 const generateFormJson = (inputFieldData: IFormResponse[], formData: Object): IJson[] => {
     const objArray: IJson[] = [];
-    inputFieldData.map((value, i) => {
+    inputFieldData.forEach((value, i) => {
         if (!value.isHidden) {
             const formName = value?.label && (camelCase(value?.label) as string);
             if (formName) {
