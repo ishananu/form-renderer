@@ -148,7 +148,7 @@ const App = () => {
             )}
           </Form>
         </Col>
-        <Col className='column-wrapper' style={{ marginLeft: 10 }}>
+        <Col className='column-wrapper'>
           <p>Form values :</p>
           <code>
             <pre>{JSON.stringify(formData, null, 2)}</pre>
